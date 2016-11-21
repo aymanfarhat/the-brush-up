@@ -1,8 +1,8 @@
-# Computer Science Brushup
+# The Brushup
 ### Sharpening the saw with data structures and algorithm problems
 
 A series of exercises on implementing common data structures and solving algorithm problems around them in Python. The main idea
-behind this repository is to commit to sharpening the saw and recieve feedback on that. 
+behind this repository is to commit on regularly sharpening the saw and recieve feedback on that. 
 
 Many exercises are inspired from:
 
@@ -10,8 +10,7 @@ Many exercises are inspired from:
 
 ## Setup Instructions
 
-You need to have Python 3 installed. Then install the dependencies in your virtualenv via:
-`pip install -r requirements.txt`
+You need to have Python 3 installed. Then install the dependencies in your virtualenv via `pip install -r requirements.txt`
 
 ## Table of contents
 
