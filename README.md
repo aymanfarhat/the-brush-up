@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/aymanfarhat/the-brush-up.svg?branch=master)](https://travis-ci.org/aymanfarhat/the-brush-up)
 # The Brushup
 ### Sharpening the saw with data structures and algorithm problems
 
