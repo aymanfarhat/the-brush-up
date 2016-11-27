@@ -140,3 +140,21 @@ def test_del_node():
     mylist.del_node(five)
 
     assert [] == [n.data for n in mylist]
+
+
+def test_prepend():
+    mylist = LinkedList()
+
+    mylist.prepend('one')
+    mylist.prepend('two')
+    mylist.prepend('three')
+    mylist.prepend('four')
+    mylist.prepend('five')
+
+    assert ['five', 'four', 'three', 'two', 'one'] == [n.data for n in mylist]
+
+def test_reverse_new():
+    pass
+
+def test_reverse():
+    pass

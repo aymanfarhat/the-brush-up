@@ -105,3 +105,25 @@ class LinkedList(object):
             self.size -= 1
         else:
             raise KeyError('Cant delete {0} node at the end of the tail', node.data)
+
+    
+    def prepend(self, data):
+        """Insert a new node at the begining of the linked list"""
+        new_node = Node(data)
+
+        new_node.next_node = self.head
+
+        if self.head:
+            self.head.next = new_node.next_node
+
+        self.head = new_node
+
+
+    def reverse(self):
+        """Reverse the elements of the linked list in place in linear time"""
+        pass
+
+
+    def reverse_new(self):
+        """Reverse the elements of the linked list creating a new list in linear time"""
+        pass
