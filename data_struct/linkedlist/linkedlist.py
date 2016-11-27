@@ -135,4 +135,15 @@ class LinkedList(object):
 
     def reverse(self):
         """Reverse the elements of the linked list in place in linear time"""
-        pass
+
+        previous = None 
+        current = self.head
+
+        while current:
+            temp_buffer = current.next_node
+            current.next_node = previous
+
+            previous = current
+            current = temp_buffer
+
+        self.head = previous
