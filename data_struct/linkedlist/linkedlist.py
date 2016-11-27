@@ -95,7 +95,6 @@ class LinkedList(object):
             self.head = None
 
         elif node.next_node: 
-            node.next_node
             swap = node.next_node
 
             node.data = swap.data
@@ -147,3 +146,22 @@ class LinkedList(object):
             current = temp_buffer
 
         self.head = previous
+
+
+    def remove_duplicates(self):
+        """Remove duplicates from the current linked list in linear time"""
+        unique_hashset = set()
+
+        current = self.head
+        previous = None
+
+        while current:
+            if current.data in unique_hashset:
+                previous.next_node = current.next_node
+                current.next_node = None
+                current = previous
+            else:
+                unique_hashset.add(current.data)
+
+            previous = current
+            current = current.next_node

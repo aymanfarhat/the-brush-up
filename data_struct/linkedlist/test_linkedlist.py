@@ -206,3 +206,21 @@ def test_reverse():
     mylist.reverse()
 
     assert ['one'] == [n.data for n in mylist]
+
+def test_remove_duplicates():
+
+    mylist  = LinkedList()
+
+    mylist.append('one')
+    mylist.append('two')
+    mylist.append('three')
+    mylist.append('four')
+    mylist.append('five')
+    mylist.append('four')
+    mylist.append('five')
+    mylist.append('five')
+    mylist.append('two')
+
+    mylist.remove_duplicates()
+
+    assert ['one', 'two', 'three', 'four', 'five'] == [n.data for n in mylist]
