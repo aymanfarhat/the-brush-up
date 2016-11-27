@@ -77,3 +77,31 @@ class LinkedList(object):
                 current = current.next_node
 
         raise KeyError('Item with data {0} not found'.format(data))
+
+    
+    def clear(self):
+        self.head = None
+
+    def del_node(self, node):
+        """Given a direct reference to a node, delete and 
+        reconstruct the list in constant time O(1)
+        The node is expected to have a next or raise an
+        exception"""
+
+        if self.size == 0:
+            raise KeyError('Linked list is empty')
+
+        elif self.size == 1:
+            self.head = None
+
+        elif node.next_node: 
+            node.next_node
+            swap = node.next_node
+
+            node.data = swap.data
+            node.next_node = swap.next_node
+            swap.next_node = None
+
+            self.size -= 1
+        else:
+            raise KeyError('Cant delete {0} node at the end of the tail', node.data)

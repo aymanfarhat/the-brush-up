@@ -85,3 +85,58 @@ def test_delete():
         assert False
     except KeyError:
         assert True
+
+def test_clear():
+
+    mylist = LinkedList()
+
+    mylist.append('one')
+    mylist.append('two')
+    mylist.append('three')
+    
+    mylist.clear()
+
+    assert [] == [n.data for n in mylist]
+
+def test_del_node():
+    mylist = LinkedList()
+
+    mylist.append('one')
+    mylist.append('two')
+    mylist.append('three')
+    mylist.append('four')
+    mylist.append('five')
+
+
+    five = mylist['five']
+
+    try:
+        mylist.del_node(five)
+        assert False
+    except KeyError:
+        assert True
+
+    one = mylist['one']
+    mylist.del_node(one)
+
+    assert ['two', 'three', 'four', 'five'] == [n.data for n in mylist]
+
+    three = mylist['three']
+    mylist.del_node(three)
+
+    assert ['two', 'four', 'five'] == [n.data for n in mylist]
+    
+    four = mylist['four']
+    mylist.del_node(four)
+
+    assert ['two', 'five'] == [n.data for n in mylist]
+    
+    two = mylist['two']
+    mylist.del_node(two)
+
+    assert ['five'] == [n.data for n in mylist]
+    
+    five = mylist['five']
+    mylist.del_node(five)
+
+    assert [] == [n.data for n in mylist]
