@@ -119,11 +119,20 @@ class LinkedList(object):
         self.head = new_node
 
 
-    def reverse(self):
-        """Reverse the elements of the linked list in place in linear time"""
-        pass
-
-
     def reverse_new(self):
         """Reverse the elements of the linked list creating a new list in linear time"""
+
+        new_list = self.__class__()
+
+        current = self.head
+
+        while current:
+            new_list.prepend(current.data)
+            current = current.next_node
+
+        return new_list
+
+
+    def reverse(self):
+        """Reverse the elements of the linked list in place in linear time"""
         pass

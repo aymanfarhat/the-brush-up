@@ -153,8 +153,20 @@ def test_prepend():
 
     assert ['five', 'four', 'three', 'two', 'one'] == [n.data for n in mylist]
 
+
 def test_reverse_new():
-    pass
+    original_list = LinkedList()
+
+    original_list.append('one')
+    original_list.append('two')
+    original_list.append('three')
+    original_list.append('four')
+    original_list.append('five')
+
+    reverse = original_list.reverse_new()
+
+    assert ['five', 'four', 'three', 'two', 'one'] == [n.data for n in reverse]
+
 
 def test_reverse():
     pass
