@@ -165,3 +165,26 @@ class LinkedList(object):
 
             previous = current
             current = current.next_node
+
+
+    def get_k_last(self, k):
+        """Implement an algorithm to find the kth to last element of a singly linked list, 
+        without using the list's len attribute or an extra loop for counting its size"""
+
+        current = self.head
+        current_index = 0
+        k_index = 0
+        k_node = self.head
+
+        while current:
+            if current_index >= k:
+                k_index += 1
+                k_node = k_node.next_node
+
+            current = current.next_node
+            current_index += 1
+
+        if k > current_index:
+            raise KeyError('List too small {0}th last can’t be found!', k)
+        else:
+            return k_node

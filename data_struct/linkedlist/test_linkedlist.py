@@ -208,7 +208,6 @@ def test_reverse():
     assert ['one'] == [n.data for n in mylist]
 
 def test_remove_duplicates():
-
     mylist  = LinkedList()
 
     mylist.append('one')
@@ -224,3 +223,29 @@ def test_remove_duplicates():
     mylist.remove_duplicates()
 
     assert ['one', 'two', 'three', 'four', 'five'] == [n.data for n in mylist]
+
+def test_k_last():
+    mylist  = LinkedList()
+
+    mylist.append('one')
+    mylist.append('two')
+    mylist.append('three')
+    mylist.append('four')
+    mylist.append('five')
+
+    assert 'five' == mylist.get_k_last(1).data
+    assert 'three' == mylist.get_k_last(3).data
+    assert 'two' == mylist.get_k_last(4).data
+    assert 'one' == mylist.get_k_last(5).data
+
+    try:
+        mylist.get_k_last(6).data
+        assert False
+    except KeyError:
+        assert True
+
+    try:
+        mylist.get_k_last(6).data
+        assert False
+    except:
+        assert True
