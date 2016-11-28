@@ -188,3 +188,33 @@ class LinkedList(object):
             raise KeyError('List too small {0}th last can’t be found!', k)
         else:
             return k_node
+
+
+    def partition(self, x):
+        """Write code to partition a linked list around a value x, such that 
+        all nodes less than x come before all nodes greater than or equal to x."""
+
+        smaller = self.__class__()
+        larger = self.__class__()
+
+        current = self.head
+
+        while current:
+            if current.data > x:
+                larger.append(current.data)
+            else:
+                smaller.append(current.data)
+            
+            if not current.next_node:
+                last = current
+
+            current = current.next_node
+        
+        last = smaller.head
+
+        while last.next_node:
+            last = last.next_node
+        
+        last.next_node = larger.head
+
+        return smaller

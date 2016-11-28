@@ -249,3 +249,18 @@ def test_k_last():
         assert False
     except:
         assert True
+
+def test_partition():
+    mylist  = LinkedList()
+
+    mylist.append(1)
+    mylist.append(3)
+    mylist.append(5)
+    mylist.append(2)
+    mylist.append(8)
+    mylist.append(8)
+    mylist.append(1)
+    mylist.append(4)
+
+    assert [1, 3, 2, 1, 4, 5, 8, 8] == [n.data for n in mylist.partition(4)]
+    assert [1, 2, 1, 3, 5, 8, 8, 4] == [n.data for n in mylist.partition(2)]
