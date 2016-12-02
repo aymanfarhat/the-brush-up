@@ -23,3 +23,9 @@ class Stack(object):
 
         newnode.next_node = self.head
         self.head = newnode
+
+    def peek(self):
+        if self.head:
+            return self.head.data
+
+        return None
