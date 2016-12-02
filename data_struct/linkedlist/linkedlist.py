@@ -33,6 +33,7 @@ class LinkedList(object):
 
         return new_node
 
+
     def __getitem__(self, data):
         """Find a single item by its data value and return the node"""
         current = self.head
@@ -45,6 +46,7 @@ class LinkedList(object):
 
         raise KeyError('Item with data {} not found!'.format(data))
 
+
     def __iter__(self):
         """Iterable over linked list nodes"""
         current = self.head
@@ -52,6 +54,7 @@ class LinkedList(object):
         while current:
             yield current
             current = current.next_node
+
 
     def __delitem__(self, data):
         """Delete an node in linked list by its data value"""
@@ -218,3 +221,22 @@ class LinkedList(object):
         last.next_node = larger.head
 
         return smaller
+
+
+    def add_list(self):
+        """You have two numbers represented by a linked list, where each node contains a single digit.
+        The digits are stored in reverse order, such that the Ts digit is at the head of the list. 
+        Write a function that adds the two numbers and returns the sum as a linked list.
+
+        EXAMPLE
+        Input:(7-> 1 -> 6) + (5 -> 9 -> 2).Thatis,617 + 295.
+        Output: 2 -> 1 -> 9.That is, 912.
+
+        FOLLOW UP
+        Suppose the digits are stored in forward order. Repeat the above problem. 
+
+        EXAMPLE
+        Input:(6 -> 1 -> 7) + (2 -> 9 -> 5).Thatis,617 + 295.
+        Output: 9 -> 1 -> 2.That is, 912.
+        """
+
